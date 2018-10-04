@@ -14,7 +14,6 @@ unless Dir.exists?(lockfile_path)
 	lockfile.puts "!!!LOCKED!!!"
 	lockfile.close
 	files = Dir[xml_log_path + '*.xml']
-	puts "Found #{files.count} files"
 	unless files.empty?
 		files.each do |path|
 			doc = File.open(path) { |f| Nokogiri::XML(f) }
